@@ -62,7 +62,6 @@ function authenticator(req, res, next) {
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
-  console.log('something');
   if (username === 'Lambda School' && password === 'i<3Lambd4') {
     req.loggedIn = true;
     res.status(200).json({
@@ -77,7 +76,6 @@ app.post('/api/login', (req, res) => {
 
 app.get('/api/friends', authenticator, (req, res) => {
   setTimeout(() => {
-    console.log('something');
     res.send(friends);
   }, 1000);
 });
